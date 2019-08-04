@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 8/4/2019 12:04:49 by Netedit Version 0.32.0
+<!-- generated on 8/4/2019 12:19:32 by Netedit Version 0.32.0
 <?xml version="1.0" encoding="UTF-8"?>
 
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
@@ -30,36 +30,36 @@
 
     <location netOffset="0.00,0.00" convBoundary="0.00,-59.64,745.00,0.00" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
 
-    <edge id="gneE10" from="west" to="gneJ3" priority="1">
-        <lane id="gneE10_0" index="0" speed="13.89" length="528.35" shape="238.46,-8.25 745.00,-8.25"/>
-        <lane id="gneE10_1" index="1" speed="13.89" length="528.35" shape="238.46,-4.95 745.00,-4.95"/>
-        <lane id="gneE10_2" index="2" speed="13.89" length="528.35" shape="238.46,-1.65 745.00,-1.65"/>
+    <edge id="cont" from="merger" to="end" priority="1">
+        <lane id="cont_0" index="0" speed="90.00" length="528.35" shape="238.46,-8.25 745.00,-8.25"/>
+        <lane id="cont_1" index="1" speed="90.00" length="528.35" shape="238.46,-4.95 745.00,-4.95"/>
+        <lane id="cont_2" index="2" speed="90.00" length="528.35" shape="238.46,-1.65 745.00,-1.65"/>
     </edge>
-    <edge id="gneE8" from="zipperb" to="west" priority="1">
-        <lane id="gneE8_0" index="0" speed="30.00" length="223.83" shape="1.49,-64.45 208.66,-14.96"/>
-        <lane id="gneE8_1" index="1" speed="30.00" length="223.83" shape="0.72,-61.24 207.89,-11.75"/>
+    <edge id="highway" from="begin" to="merger" priority="1">
+        <lane id="highway_0" index="0" speed="90.00" length="220.61" shape="0.00,-8.25 207.48,-8.25"/>
+        <lane id="highway_1" index="1" speed="90.00" length="220.61" shape="0.00,-4.95 207.48,-4.95"/>
+        <lane id="highway_2" index="2" speed="90.00" length="220.61" shape="0.00,-1.65 207.48,-1.65"/>
     </edge>
-    <edge id="highway" from="east" to="west" priority="1">
-        <lane id="highway_0" index="0" speed="96.56" length="220.61" shape="0.00,-8.25 207.48,-8.25"/>
-        <lane id="highway_1" index="1" speed="96.56" length="220.61" shape="0.00,-4.95 207.48,-4.95"/>
-        <lane id="highway_2" index="2" speed="96.56" length="220.61" shape="0.00,-1.65 207.48,-1.65"/>
+    <edge id="ramp" from="ramp" to="merger" priority="1">
+        <lane id="ramp_0" index="0" speed="30.00" length="223.83" shape="1.49,-64.45 208.66,-14.96"/>
+        <lane id="ramp_1" index="1" speed="30.00" length="223.83" shape="0.72,-61.24 207.89,-11.75"/>
     </edge>
 
-    <junction id="east" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,-0.05 0.00,-9.85"/>
-    <junction id="gneJ3" type="dead_end" x="745.00" y="0.00" incLanes="gneE10_0 gneE10_1 gneE10_2" intLanes="" shape="745.00,-9.85 745.00,-0.05"/>
-    <junction id="west" type="priority" x="250.00" y="0.00" incLanes="gneE8_0 gneE8_1 highway_0 highway_1 highway_2" intLanes="" shape="238.46,-0.05 238.46,-9.85 209.03,-16.52 207.52,-10.20 207.48,-9.85 207.48,-0.05">
+    <junction id="begin" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,-0.05 0.00,-9.85"/>
+    <junction id="end" type="dead_end" x="745.00" y="0.00" incLanes="cont_0 cont_1 cont_2" intLanes="" shape="745.00,-9.85 745.00,-0.05"/>
+    <junction id="merger" type="priority" x="250.00" y="0.00" incLanes="ramp_0 ramp_1 highway_0 highway_1 highway_2" intLanes="" shape="238.46,-0.05 238.46,-9.85 209.03,-16.52 207.52,-10.20 207.48,-9.85 207.48,-0.05">
         <request index="0" response="11100" foes="11100"/>
         <request index="1" response="11100" foes="11100"/>
         <request index="2" response="00000" foes="00011"/>
         <request index="3" response="00000" foes="00011"/>
         <request index="4" response="00000" foes="00011"/>
     </junction>
-    <junction id="zipperb" type="dead_end" x="0.34" y="-59.64" incLanes="" intLanes="" shape="0.35,-59.69 1.86,-66.01"/>
+    <junction id="ramp" type="dead_end" x="0.34" y="-59.64" incLanes="" intLanes="" shape="0.35,-59.69 1.86,-66.01"/>
 
-    <connection from="gneE8" to="gneE10" fromLane="0" toLane="0" dir="s" state="m"/>
-    <connection from="gneE8" to="gneE10" fromLane="1" toLane="1" dir="s" state="m"/>
-    <connection from="highway" to="gneE10" fromLane="0" toLane="0" dir="s" state="M"/>
-    <connection from="highway" to="gneE10" fromLane="1" toLane="1" dir="s" state="M"/>
-    <connection from="highway" to="gneE10" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from="highway" to="cont" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="highway" to="cont" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from="highway" to="cont" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from="ramp" to="cont" fromLane="0" toLane="0" dir="s" state="m"/>
+    <connection from="ramp" to="cont" fromLane="1" toLane="1" dir="s" state="m"/>
 
 </net>
