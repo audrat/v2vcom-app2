@@ -1,0 +1,14 @@
+<routes>
+        <!--vehicle types-->
+        <vType id="fast" accel="3.0" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="25" color="0,1,0"/>
+        <vType id="slow" accel="1.0" decel="4.5" sigma="0.5" length="7" minGap="3" maxSpeed="15" color="0,0,1"/>
+        <vType id="emergency" accel="2.6" decel="4.5" sigma="0.5" speedMode="1.5" length="7" minGap="2.5" maxSpeed="35" color="1,0,0"/> 
+		
+	<!--highway-->
+        <route id="hw" edges="highway cont" />
+        
+        <!--ramp-->
+        <route id="merge" edges="ramp cont" />
+
+        <flow id="type1" route="hw" begin=""
+</routes>
